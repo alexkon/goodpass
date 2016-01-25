@@ -1,0 +1,30 @@
+@import "compass/css3";
+@import "compass/reset";
+@import "meta/grids";
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: #00B7FF;
+}
+
+.smile {
+  background: #ffeec3;
+  margin: 100px 0 0 0;
+  height: 150px;
+  width: 100%;
+}
+
+.output {
+  width: 100%;
+  height: 50px;
+  background: #f5c5ff;
+}
+
+.control {
+  width: 100%;
+  height: 250px;
+  background: #ff9fab;
+}
