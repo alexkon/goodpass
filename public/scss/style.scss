@@ -10,6 +10,10 @@ h1 {
   color: #6dcff6;
 }
 
+.main {
+  height: 100%;
+}
+
 .smile {
   margin-top: 100px;
   margin-bottom: 30px;
@@ -17,6 +21,7 @@ h1 {
 
 .output {
   & h1 {
+    font-size: 1.5em;
     padding: 10px;
     text-align: center;
   }
@@ -26,40 +31,72 @@ h1 {
   .btn-copy {
     background: #6dcff6;
     border-radius: 100%;
-    border: #fff solid 9px;
+    border: #fff solid 7px;
     color: #fff;
-    float: left;
     font-size: 1.5em;
+    top: -30px;;
     position: relative;
     text-align: center;
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
     z-index: 1;
-    &:hover {
+    &:active {
       background: #5482a7;
     }
     img {
-      margin-top: 20px;
-      width: 40px;
+      position: relative;
+      top: 25%;
+      width: 35px;
     }
   }
   .btn-gen {
     background: #fc987e;
     border-radius: 10px;
     color: #fff;
-    top: 22px;
-    left: -20px;
-    float: left;
-    padding: 10px 10px 10px 40px;
+    top: 34px;
+    left: 10px;
+    margin: 0 35px;
+    padding: 10px 25px 10px 35px;
     position: relative;
-    &:hover {
+    text-align: center;
+    &:active {
       background: #cb6c66;
+    }
+  }
+  .slider {
+    background: #6dcff6;
+    position: relative;
+    top: -10px;
+    height: 4px;
+    width: 100%;
+    .Characters {
+      background: #6dcff6;
+      border-radius: 100%;
+      border: #fff solid 3px;
+      color: #fff;
+      top: -14px;;
+      left: 5px;
+      position: relative;
+      text-align: center;
+      height: 25px;
+      width: 25px;
+      z-index: 1;
+      &:active {
+        background: #5482a7;
+      }
     }
   }
 }
 
 .settings {
   color: #6dcff6;
-  position: relative;
-  top: 100px;
+  margin-top: 20px;
+}
+
+footer {
+  bottom: 0;
+  color: #7b8888;
+  position: absolute;
+  padding: 10px;
+  font-size: 0.7em;
 }

@@ -7,7 +7,7 @@ $susy: (
         math: fluid, // можно использовать static для неадаптивных сайтов (если вы такие еще делаете)
         output: float, // используйте outside для исправлениях некоторых багов, float
         gutter-position: inside, // ( before | after | split | inside | inside-static )
-        container: 1000px, // укажите максимальную ширину в любых единицах, например, 60em 1120px
+        container: 340px, // укажите максимальную ширину в любых единицах, например, 60em 1120px
         container-position: center, // если вы хотите сделать не по центру, то можно использовать left и right
         columns: 12, // количество колонок
         gutters: 1/4, // ширина пробельчика для каждой колонки gutters: 1/4, .25
@@ -33,8 +33,7 @@ body {
 }
 
 .main {
-  @include span(4);
-  @include push(4);
+  @include span(12);
 }
 
 .smile {
