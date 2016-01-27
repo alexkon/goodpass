@@ -27,6 +27,7 @@ build/Release
 
 # Idea Settings
 .idea
+passgen.iml
 
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
