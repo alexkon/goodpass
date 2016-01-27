@@ -3,7 +3,7 @@
 @import "meta/grids";
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 22px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -17,7 +17,6 @@ h1 {
 
 .output {
   & h1 {
-    font-size: 2rem;
     padding: 10px;
     text-align: center;
   }
@@ -36,6 +35,13 @@ h1 {
     height: 90px;
     width: 90px;
     z-index: 1;
+    &:hover {
+      background: #5482a7;
+    }
+    img {
+      margin-top: 20px;
+      width: 40px;
+    }
   }
   .btn-gen {
     background: #fc987e;
@@ -43,10 +49,17 @@ h1 {
     color: #fff;
     top: 22px;
     left: -20px;
-    font-size: 1.5em;
     float: left;
-    padding: 15px 15px 15px 45px;
+    padding: 10px 10px 10px 40px;
     position: relative;
+    &:hover {
+      background: #cb6c66;
+    }
   }
 }
 
+.settings {
+  color: #6dcff6;
+  position: relative;
+  top: 100px;
+}
