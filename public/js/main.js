@@ -6,4 +6,8 @@ $(document).ready(function () {
 
         console.log(pos)
     });
+
+    $('#button-generate-pass').click(function() {
+        console.log('Generate pass button clik');
+    });
 });
