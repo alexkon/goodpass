@@ -1,30 +1,30 @@
-// Requirements
-// ============
+
+
 @import "susy";
 
 $susy: (
-        flow: ltr, // сменить дефолтное навправление колонок, можно задавать переменной и менять для арабских сайтов
-        math: fluid, // можно использовать static для неадаптивных сайтов (если вы такие еще делаете)
-        output: float, // используйте outside для исправлениях некоторых багов, float
-        gutter-position: inside, // ( before | after | split | inside | inside-static )
-        container: 340px, // укажите максимальную ширину в любых единицах, например, 60em 1120px
-        container-position: center, // если вы хотите сделать не по центру, то можно использовать left и right
-        columns: 12, // количество колонок
-        gutters: 1/4, // ширина пробельчика для каждой колонки gutters: 1/4, .25
-        column-width: false, // ширина колонки задается только при math: static
-        global-box-sizing: content-box, // можно задать border-box, но иногда проще использовать border-box миксин из компаса
-        last-flow: to, // последний элемент в ряду флоатится вправо, можно сменить
+        flow: ltr, 
+        math: fluid, 
+        output: float, 
+        gutter-position: inside, 
+        container: 340px, 
+        container-position: center, 
+        columns: 12, 
+        gutters: 1/4, 
+        column-width: false, 
+        global-box-sizing: content-box, 
+        last-flow: to, 
         debug: (
-                image: show, // варианты: show | hide | show-columns | show-baseline для показа всех вариантов колонок и линеечек
-                color: rgba(#3f3839, .25), // менять цвет у колонок
-                output: overlay, // есть еще вариант overlay, background в котором колонки показываются только при наведении
-                toggle: left bottom, // положение переключателя для показа оверлея
+                image: show, 
+                color: rgba(#3f3839, .25), 
+                output: overlay, 
+                toggle: left bottom, 
         ),
-        use-custom: (// для каждого из них если включить true будут использоваться миксины из Compass или ваши собственные)
-                background-image: true, // возможность использовать свой миксин background-image
-                background-options: false, // разные background миксины
-                box-sizing: true, // свой миксин box-sizing
-                clearfix: false, // свой миксин clearfix
+        use-custom: (
+                background-image: true, 
+                background-options: false, 
+                box-sizing: true, 
+                clearfix: false, 
         )
 );
 
