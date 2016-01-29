@@ -8,6 +8,7 @@ $(document).ready(function () {
     });
 
     $('#button-generate-pass').click(function() {
-        console.log('Generate pass button clik');
+        console.log('Generate pass button click:');
+        $('#output-generated-pass').html("newpass");
     });
 });
