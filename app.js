@@ -20,13 +20,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+
 app.use(require('node-compass')({
+    project: path.join(__dirname, 'public'),
     mode: 'expanded',
     logging: true,
-    project: path.join(__dirname, 'public'),
     css: 'css',
     sass: 'scss'
 }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 

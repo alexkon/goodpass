@@ -1,4 +1,4 @@
-@import "compass/css3";
+//@import "compass/css3";
 @import "compass/reset";
 @import "meta/grids";
 
@@ -93,7 +93,7 @@ h1 {
 
 .settings {
   color: #6dcff6;
-  margin-top: 20px;
+  margin: 20px 0 100px 0;
   & span {
     cursor: pointer;
     width: auto;
