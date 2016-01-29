@@ -33,3 +33,9 @@ passgen.iml
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 
+# Bower components
+bower_components
+
+# Sass css files
+public/.sass-cache
+public/css
