@@ -15,7 +15,11 @@ $(document).ready(function () {
 });
 
 function generate_new_pass() {
-    var numbers = ["0","1","2","3","4","5","6","7","8","9"]
+
+    var PASS_LENGTH = 8;
+    var new_pass = "";
+
+    var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
     var lower_letters =
         [
@@ -28,29 +32,19 @@ function generate_new_pass() {
             "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
         ];
 
-    var set_array = [numbers, lower_letters, upper_letters];
+    var array_of_sets = [numbers, lower_letters, upper_letters];
 
-
-    var pass_length = 8;
-    var new_pass = "";
-    for (var i = 0; i < pass_length; i++) {
-        var rand_set = get_random_set(set_array);
-        var rand_symbol = get_random_symbol_from_array(rand_set);
-        new_pass = new_pass + rand_symbol;
+    for (var i = 0; i < PASS_LENGTH; i++) {
+        var array_of_symbols = get_random_item_from_array(array_of_sets);
+        var rand_symbol = get_random_item_from_array(array_of_symbols);
+        new_pass += rand_symbol;
     }
     return new_pass;
 }
 
-function get_random_symbol_from_array( array) {
-        var len = array.length;
-        var rand_symbol_index = Math.round(Math.random() * (len - 1));
-        var rand_symbol = array[rand_symbol_index];
-    return rand_symbol;
-}
-
-function get_random_set( set_array) {
-    var len = set_array.length;
-    var rand_set_index = Math.round(Math.random() * (len - 1));
-    var rand_set = set_array[rand_set_index];
-    return rand_set;
+function get_random_item_from_array(array) {
+    var len = array.length;
+    var rand_item_index = Math.round(Math.random() * (len - 1));
+    var rand_item = array[rand_item_index];
+    return rand_item;
 }
