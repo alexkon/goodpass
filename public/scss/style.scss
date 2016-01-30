@@ -3,15 +3,11 @@
 @import "compass/typography/vertical_rhythm";
 @import "meta/grids";
 
-$base-font-size: 16px;
-$base-line-height: 24px;
-@include establish-baseline();
-
 $base-color: #6dcff6;
 $second-color: #fc987e;
 
 body {
-  font: 22px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -115,11 +111,12 @@ button {
     border: 1px solid $base-color;
     color: $base-color;
     cursor: pointer;
+    font-size: 0.8em;
     padding: 3px;
     margin-top: 15px;
     &.active {
-      border: 1px solid darken($base-color, 25);
-      background: darken($base-color, 25);
+      border: 1px solid $base-color;
+      background: $base-color;
       color: white;
     }
   }

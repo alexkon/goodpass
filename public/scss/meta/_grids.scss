@@ -54,9 +54,12 @@ body {
 .settings {
   @include span(12);
   & button {
-    @include span(5);
+    @include span(4);
     &:nth-child(even) {
       @include push(2);
+    }
+    &:nth-child(odd) {
+      @include push(1);
     }
   }
 }
