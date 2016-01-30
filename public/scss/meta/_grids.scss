@@ -53,4 +53,14 @@ body {
 
 .settings {
   @include span(12);
+  & button {
+    @include span(5);
+    &:nth-child(even) {
+      @include push(2);
+    }
+  }
+}
+
+footer {
+  @include span(12);
 }

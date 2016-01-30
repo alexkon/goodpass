@@ -7,12 +7,27 @@ $base-font-size: 16px;
 $base-line-height: 24px;
 @include establish-baseline();
 
+$base-color: #6dcff6;
+$second-color: #fc987e;
+
 body {
   font: 22px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 h1 {
-  color: #6dcff6;
+  color: $base-color;
+}
+
+button {
+  background: none;
+  border: 0;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
 }
 
 .main {
@@ -33,7 +48,7 @@ h1 {
 
 .control {
   .btn-copy {
-    background: #6dcff6;
+    background: $base-color;
     border-radius: 100%;
     border: #fff solid 7px;
     color: #fff;
@@ -45,7 +60,7 @@ h1 {
     width: 70px;
     z-index: 1;
     &:active {
-      background: #5482a7;
+      background: darken($base-color, 25);
     }
     img {
       margin-top: 5px;
@@ -54,8 +69,7 @@ h1 {
   }
 
   .btn-gen {
-    background: #fc987e;
-    border: none;
+    background: $second-color;
     border-radius: 10px;
     color: #fff;
     cursor: pointer;
@@ -64,18 +78,18 @@ h1 {
     margin: 15px 0 0 -20px;
     padding: 0 10px 0 25px;
     &:active {
-      background: #cb6c66;
+      background: darken($second-color, 15);
     }
   }
 
   .slider {
-    background: #6dcff6;
+    background: $base-color;
     cursor: pointer;
     margin-top: 30px;
     height: 4px;
     width: 100%;
     .Characters {
-      background: #6dcff6;
+      background: $base-color;
       border-radius: 100%;
       border: #fff solid 3px;
       color: #fff;
@@ -87,24 +101,33 @@ h1 {
       width: 25px;
       z-index: 1;
       &:active {
-        background: #5482a7;
+        background: darken($base-color, 25);
       }
     }
   }
 }
 
 .settings {
-  color: #6dcff6;
+  color: $base-color;
   margin: 20px 0 100px 0;
-  & span {
+  & button {
+    background: white;
+    border: 1px solid $base-color;
+    color: $base-color;
     cursor: pointer;
-    width: auto;
+    padding: 3px;
+    margin-top: 15px;
+    &.active {
+      border: 1px solid darken($base-color, 25);
+      background: darken($base-color, 25);
+      color: white;
+    }
   }
 }
 
 footer {
   bottom: 0;
-  color: #7b8888;
+  color: grey;
   position: absolute;
   padding: 10px;
   font-size: 0.7em;

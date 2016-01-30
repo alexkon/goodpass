@@ -12,18 +12,16 @@ block content
                 button(title="Копировать")#button-copy-pass.btn-copy
                     img(src="img/copy-01.svg")
             button(title="Сгенерировать")#button-generate-pass.btn-gen сгенерировать
+
             div(title="Количество символов").slider
                 div.Characters 1
 
         div.settings
-            span(title="Цифры").digit 0-9
-            br
-            span(title="Буквы").simbol a-z
-            br
-            span(title="Прописные").none A-Z
-            br
-            span(title="Буквы и прописные").none Aa-Zz
-        footer
+            button(title="Цифры").numbers.active 0-9
+            button(title="Прописные").upper-char A-Z
+            button(title="Буквы").lower-char a-z
+            button(title="Буквы и прописные").symbols @#$%
+        //footer
             span разработана super puper DEV TEAM 2016
 
         script(type="text/javascript" src="bower_components/jquery/dist/jquery.min.js")
