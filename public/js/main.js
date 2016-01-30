@@ -12,6 +12,15 @@ $(document).ready(function () {
         var new_pass = generate_new_pass();
         $('#output-generated-pass').text(new_pass);
     });
+
+    // copy to clipboard button implementation
+    var client = new ZeroClipboard($("#button-copy-pass"));
+    client.on( "copy", function (event) {
+        var clipboard = event.clipboardData;
+        var text_to_copy = $('#output-generated-pass').text();
+        clipboard.setData( "text/plain", text_to_copy );
+        alert("Password " + text_to_copy + " copied to clipboard");
+    });
 });
 
 function generate_new_pass() {

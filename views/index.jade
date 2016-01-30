@@ -9,7 +9,7 @@ block content
     div.control
       div(title="Сгенерировать")#button-generate-pass.btn-gen.
         сгенерировать
-      div(title="Копировать").btn-copy
+      div(title="Копировать")#button-copy-pass.btn-copy
         img(src="img/copy-01.svg")
       div(title="Количество символов").slider
         div.Characters 1
@@ -26,4 +26,5 @@ block content
     //  span разработана super puper DEV TEAM 2016
 
     script(type="text/javascript" src="bower_components/jquery/dist/jquery.min.js")
+    script(type="text/javascript" src="bower_components/zeroclipboard/dist/ZeroClipboard.min.js")
     script(type="text/javascript" src="js/main.js")
