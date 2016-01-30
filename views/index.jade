@@ -1,30 +1,31 @@
 extends layout
 
 block content
-  div.main
-    div(title="Качество пароля").smile
-      img(src="img/smile-01.svg")
-    div(title="Пароль").output
-      h1#output-generated-pass Mx5w3234pMx5w
-    div.control
-      div(title="Сгенерировать")#button-generate-pass.btn-gen.
-        сгенерировать
-      div(title="Копировать")#button-copy-pass.btn-copy
-        img(src="img/copy-01.svg")
-      div(title="Количество символов").slider
-        div.Characters 1
+    div.main
+        div(title="Качество пароля").smile
+            img(src="img/smile-01.svg")
+        div(title="Пароль").output
+            h1#output-generated-pass Mx5
 
-    div.settings
-      span(title="Цифры").digit 0-9
-      br
-      span(title="Буквы").simbol a-z
-      br
-      span(title="Прописные").none A-Z
-      br
-      span(title="Буквы и прописные").none Aa-Zz
-    //footer
-    //  span разработана super puper DEV TEAM 2016
+        div.control
+            div.input-div-btn
+                button(title="Копировать")#button-copy-pass.btn-copy
+                    img(src="img/copy-01.svg")
+            button(title="Сгенерировать")#button-generate-pass.btn-gen сгенерировать
+            div(title="Количество символов").slider
+                div.Characters 1
 
-    script(type="text/javascript" src="bower_components/jquery/dist/jquery.min.js")
-    script(type="text/javascript" src="bower_components/zeroclipboard/dist/ZeroClipboard.min.js")
-    script(type="text/javascript" src="js/main.js")
+        div.settings
+            span(title="Цифры").digit 0-9
+            br
+            span(title="Буквы").simbol a-z
+            br
+            span(title="Прописные").none A-Z
+            br
+            span(title="Буквы и прописные").none Aa-Zz
+        footer
+            span разработана super puper DEV TEAM 2016
+
+        script(type="text/javascript" src="bower_components/jquery/dist/jquery.min.js")
+        script(type="text/javascript" src="bower_components/zeroclipboard/dist/ZeroClipboard.min.js")
+        script(type="text/javascript" src="js/main.js")

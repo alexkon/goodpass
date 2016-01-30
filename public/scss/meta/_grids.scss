@@ -1,30 +1,28 @@
-
-
 @import "susy";
 
 $susy: (
-        flow: ltr, 
-        math: fluid, 
-        output: float, 
-        gutter-position: inside, 
-        container: 340px, 
-        container-position: center, 
-        columns: 12, 
-        gutters: 1/4, 
-        column-width: false, 
-        global-box-sizing: content-box, 
-        last-flow: to, 
+        flow: ltr,
+        math: fluid,
+        output: float,
+        gutter-position: inside,
+        container: 360px,
+        container-position: center,
+        columns: 12,
+        gutters: 1/4,
+        column-width: false,
+        global-box-sizing: content-box,
+        last-flow: to,
         debug: (
-                image: show, 
-                color: rgba(#3f3839, .25), 
-                output: overlay, 
-                toggle: left bottom, 
+                image: show,
+                color: rgba(#3f3839, .25),
+                output: overlay,
+                toggle: left bottom,
         ),
         use-custom: (
-                background-image: true, 
-                background-options: false, 
-                box-sizing: true, 
-                clearfix: false, 
+                background-image: true,
+                background-options: false,
+                box-sizing: true,
+                clearfix: false,
         )
 );
 
@@ -39,4 +37,20 @@ body {
 .smile {
   @include span(4);
   @include push(4);
+}
+
+.output {
+  @include span(12);
+}
+
+.control {
+  @include span(12);
+}
+
+.slider {
+  @include span(12);
+}
+
+.settings {
+  @include span(12);
 }
