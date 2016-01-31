@@ -3,14 +3,13 @@ extends layout
 block content
     div.main
         div(title="Качество пароля").smile
-            img(src="img/smile-01.svg")
+            img(src="img/smile-03.svg")
         div(title="Пароль").output
             h1#output-generated-pass Mx5
 
         div.control
-            div.input-div-btn
-                button(title="Копировать")#button-copy-pass.btn-copy
-                    img(src="img/copy-01.svg")
+            button(title="Копировать")#button-copy-pass.btn-copy
+                img(src="img/copy-01.svg")
             button(title="Сгенерировать")#button-generate-pass.btn-gen сгенерировать
 
             div(title="Количество символов").slider
@@ -21,6 +20,7 @@ block content
             button(title="Прописные").upper-char A-Z
             button(title="Буквы").lower-char a-z
             button(title="Буквы и прописные").symbols @#$%
+
         //footer
             span разработана super puper DEV TEAM 2016
 
