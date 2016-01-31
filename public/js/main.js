@@ -81,13 +81,11 @@ var inputNumber = document.getElementById('input-number');
 
 slider.noUiSlider.on('update', function( values, handle ) {
 
-	var value = values[handle];
-
-	inputNumber.value = value;
+    inputNumber.value = values[handle];
 
 });
 
 inputNumber.addEventListener('change', function(){
-	slider.noUiSlider.set([null, this.value]);
+	slider.noUiSlider.set(this.value);
 });
 // ------------------------------------------------------------------------------------------
