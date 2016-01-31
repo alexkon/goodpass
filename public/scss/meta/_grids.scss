@@ -30,7 +30,7 @@ body {
   @include container();
 }
 
-.main {
+#main {
   @include span(12);
 }
 
@@ -43,15 +43,19 @@ body {
   @include span(12);
 }
 
-.control {
+#control {
   @include span(12);
 }
 
-.slider {
+#slider {
   @include span(12);
 }
+#input-number {
+  @include span(2);
+  @include push(5);
+}
 
-.settings {
+#settings {
   @include span(12);
   & button {
     @include span(4);

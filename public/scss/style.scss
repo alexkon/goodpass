@@ -26,7 +26,7 @@ button {
   }
 }
 
-.main {
+#main {
   height: 100%;
 }
 
@@ -42,7 +42,7 @@ button {
   }
 }
 
-.control {
+#control {
   .btn-copy {
     background: $base-color;
     border-radius: 100%;
@@ -96,7 +96,7 @@ button {
   border: #fff solid 3px;
   border-radius: 50%;
   box-shadow: none;
-  top:-11px!important;
+  top: -11px !important;
   height: 25px;
   width: 25px;
   &:active {
@@ -110,9 +110,34 @@ button {
   }
 }
 
-.settings {
+.noUi-horizontal.noUi-extended {
+  padding-right: 32px;
+}
+
+.noUi-horizontal.noUi-extended .noUi-handle {
+  left: 20px;
+}
+
+.noUi-horizontal.noUi-extended .noUi-origin {
+  right: -32px;
+}
+
+#input-number {
+  margin-top: 15px;
+  background: white;
+  border: 1px solid $base-color;
   color: $base-color;
-  margin: 20px 0 100px 0;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 3px;
+  &:focus {
+    outline: none;
+  }
+}
+
+#settings {
+  color: $base-color;
   & button {
     background: white;
     border: 1px solid $base-color;

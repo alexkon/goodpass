@@ -1,22 +1,22 @@
 extends layout
 
 block content
-    div.main
+    div#main
         div(title="Качество пароля").smile
             img(src="img/smile-03.svg")
         div(title="Пароль").output
             h1#output-generated-pass OMjHwWtq
 
-        div.control
+        div#control
             button(title="Копировать")#button-copy-pass.btn-copy
                 img(src="img/copy-01.svg")
             button(title="Сгенерировать")#button-generate-pass.btn-gen сгенерировать
 
-            div(title="Количество символов")#slider
-            br
-            input(type="text")#input-number
+        div(title="Количество символов")#slider
 
-        div.settings
+        input(type="text")#input-number
+
+        div#settings
             button(title="Цифры").numbers.active 0-9
             button(title="Прописные").upper-char A-Z
             button(title="Буквы").lower-char a-z

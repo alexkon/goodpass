@@ -60,13 +60,20 @@ var slider = document.getElementById('slider');
 
 noUiSlider.create(slider, {
     animate: true,
-	start: 1,
+	start: 4,
     step: 1,
-	direction: 'ltr',
     //tooltips:  true ,
 	range: {
-		'min': 1,
+		'min': 4,
 		'max': 32
+	},
+    format: {
+	  to: function ( value ) {
+		return value + '';
+	  },
+	  from: function ( value ) {
+		return value;
+	  }
 	}
 });
 
