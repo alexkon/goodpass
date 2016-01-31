@@ -77,29 +77,36 @@ button {
       background: darken($second-color, 15);
     }
   }
+}
 
-  .slider {
-    background: $base-color;
-    cursor: pointer;
-    margin-top: 30px;
-    height: 4px;
-    width: 100%;
-    .Characters {
-      background: $base-color;
-      border-radius: 100%;
-      border: #fff solid 3px;
-      color: #fff;
-      top: -14px;;
-      left: 5px;
-      position: relative;
-      text-align: center;
-      height: 25px;
-      width: 25px;
-      z-index: 1;
-      &:active {
-        background: darken($base-color, 25);
-      }
-    }
+#slider {
+  margin-top: 30px;
+}
+
+.noUi-target {
+  background: $base-color;
+  border: 0;
+  border-radius: 0;
+  height: 5px;
+  box-shadow: none;
+}
+
+.noUi-handle {
+  background: $base-color;
+  border: #fff solid 3px;
+  border-radius: 50%;
+  box-shadow: none;
+  top:-11px!important;
+  height: 25px;
+  width: 25px;
+  &:active {
+    background: darken($base-color, 25);
+  }
+  &:before {
+    content: none;
+  }
+  &:after {
+    content: none;
   }
 }
 

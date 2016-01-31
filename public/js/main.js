@@ -1,12 +1,5 @@
 $(document).ready(function () {
 
-    $('.slider').on('mousedown', function (e) {
-        var pos = $(e.currentTarget).offset(),
-            posX = e.pageX -pos.left;
-
-        console.log(pos)
-    });
-
     $('#button-generate-pass').click(function() {
         console.log('button-generate-pass clicked:');
         var new_pass = generate_new_pass();
@@ -57,3 +50,37 @@ function get_random_item_from_array(array) {
     var rand_item = array[rand_item_index];
     return rand_item;
 }
+
+
+
+// ------------------------------------------------------------------------------------------
+// slider
+
+var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+    animate: true,
+	start: 1,
+    step: 1,
+	direction: 'ltr',
+    //tooltips:  true ,
+	range: {
+		'min': 1,
+		'max': 32
+	}
+});
+
+var inputNumber = document.getElementById('input-number');
+
+slider.noUiSlider.on('update', function( values, handle ) {
+
+	var value = values[handle];
+
+	inputNumber.value = value;
+
+});
+
+inputNumber.addEventListener('change', function(){
+	slider.noUiSlider.set([null, this.value]);
+});
+// ------------------------------------------------------------------------------------------
