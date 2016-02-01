@@ -14,6 +14,15 @@ $(document).ready(function () {
         clipboard.setData( "text/plain", text_to_copy );
         alert("Password " + text_to_copy + " copied to clipboard");
     });
+
+    // highlight symbol-set
+    $('.symbol-set').click(function() {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        } else {
+            $(this).addClass('active');
+        }
+    });
 });
 
 function generate_new_pass() {
