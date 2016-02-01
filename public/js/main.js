@@ -37,20 +37,38 @@ function generate_new_pass() {
         return "";
     }
 
-    var numbers = ["0","1","2","3","4","5","6","7","8","9"];
+    var numbers_set = ["0","1","2","3","4","5","6","7","8","9"];
 
-    var lower_letters =
+    var lower_letters_set =
         [
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
             "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
         ];
-    var upper_letters =
+    var upper_letters_set =
         [
             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
             "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
         ];
+    var special_set =
+        [
+          "@", "#", "$", "%", "^", "&", "*"
+        ];
 
-    var array_of_sets = [numbers, lower_letters, upper_letters];
+    // make array of symbol sets
+    var array_of_sets = [];
+    $('.symbol-set').each(function() {
+       if ($(this).hasClass('active')) {
+           if ($(this).hasClass('numbers')) {
+               array_of_sets.push(numbers_set);
+           } else if ($(this).hasClass('upper-char')) {
+               array_of_sets.push(upper_letters_set);
+           } else if ($(this).hasClass('lower-char')) {
+               array_of_sets.push(lower_letters_set);
+           } else if ($(this).hasClass('special-symbols')) {
+               array_of_sets.push(special_set);
+           }
+       }
+    });
 
     for (var i = 0; i < pass_length; i++) {
         var array_of_symbols = get_random_item_from_array(array_of_sets);
