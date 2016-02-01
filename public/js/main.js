@@ -18,8 +18,15 @@ $(document).ready(function () {
 
 function generate_new_pass() {
 
-    var PASS_LENGTH = 8;
     var new_pass = "";
+
+    // get password length
+    var pass_length_text = $('#input-number').val();
+    var pass_length = parseInt(pass_length_text);
+    if (isNaN(pass_length)) {
+        alert('Password length should be an integer value!');
+        return "";
+    }
 
     var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
@@ -36,7 +43,7 @@ function generate_new_pass() {
 
     var array_of_sets = [numbers, lower_letters, upper_letters];
 
-    for (var i = 0; i < PASS_LENGTH; i++) {
+    for (var i = 0; i < pass_length; i++) {
         var array_of_symbols = get_random_item_from_array(array_of_sets);
         var rand_symbol = get_random_item_from_array(array_of_symbols);
         new_pass += rand_symbol;
