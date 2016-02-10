@@ -12,7 +12,8 @@ $(document).ready(function () {
         var clipboard = event.clipboardData;
         var text_to_copy = $('#output-generated-pass').text();
         clipboard.setData( "text/plain", text_to_copy );
-        alert("Password " + text_to_copy + " copied to clipboard");
+        var successCopy = "Пароль" + text_to_copy + " успешно скопирован";
+        $('#output-message').text(successCopy);
     });
 
     // highlight symbol-set
