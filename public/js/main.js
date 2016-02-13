@@ -111,11 +111,11 @@ function get_random_item_from_array(array) {
 }
 
 function set_pass_color_message_pic(strength, message, pic) {
+    $('#image-pass-strength').attr("src", pic);
     var outputMessage = $('#output-message');
     outputMessage.removeClass();
     outputMessage.addClass(strength);
     outputMessage.text(message);
-    $('#image-pass-strength').attr("src", pic)
 }
 
 
