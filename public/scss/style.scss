@@ -170,6 +170,7 @@ button {
   margin-top: 30px;
   background: white;
   border: 1px solid $base-color;
+  border-radius: 6px;
   color: $base-color;
   cursor: pointer;
   text-align: center;
@@ -185,6 +186,7 @@ button {
   & button {
     background: white;
     border: 1px solid $base-color;
+    border-radius: 6px;
     color: $base-color;
     cursor: pointer;
     font-size: 0.8em;
