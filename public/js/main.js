@@ -55,7 +55,7 @@ function generate_new_pass() {
         ];
     var specialSet =
         [
-          "@", "#", "$", "%", "^", "&", "*"
+          "!", "@", "#", "$", "%", "^", "&", "*", "_", '+', '='
         ];
 
     // make array of symbol sets
