@@ -13,6 +13,8 @@ $(document).ready(function () {
         var text_to_copy = $('#output-generated-pass').text();
         clipboard.setData( "text/plain", text_to_copy );
         var successCopy = "Пароль успешно скопирован в буфер обмена";
+        $('#output-message').removeClass();
+        $('#output-message').addClass('success');
         $('#output-message').text(successCopy);
     });
 
@@ -71,6 +73,7 @@ function generate_new_pass() {
        }
     });
 
+    // generate pass from symbol sets
     for (var i = 0; i < pass_length; i++) {
         var array_of_symbols = get_random_item_from_array(array_of_sets);
         var rand_symbol = get_random_item_from_array(array_of_symbols);
