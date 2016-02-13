@@ -12,7 +12,7 @@ $(document).ready(function () {
         var clipboard = event.clipboardData;
         var textToCopy = $('#output-generated-pass').text();
         clipboard.setData( "text/plain", textToCopy );
-        var successCopy = "Пароль успешно скопирован в буфер обмена";
+        var successCopy = "Пароль скопирован";
         var outputMessage = $('#output-message');
         outputMessage.removeClass();
         outputMessage.addClass('success');
