@@ -24,7 +24,6 @@ button {
   border: 0;
   font: inherit;
   line-height: normal;
-  overflow: visible;
   padding: 0;
   &:focus {
     outline: none;
@@ -35,15 +34,29 @@ button {
   height: 100%;
 }
 
+.beta {
+  background: $second-color;
+  position: absolute;
+  top:25px;
+  right: -100px;
+  color: white;
+  line-height: 30px;
+  width: 300px;
+  text-align: center;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .smile {
   margin-top: 150px;
 }
 
 .output {
+  text-align: center;
   & h1 {
     font-size: 1.5em;
     padding: 10px;
-    text-align: center;
   }
 }
 
