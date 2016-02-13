@@ -13,9 +13,10 @@ $(document).ready(function () {
         var text_to_copy = $('#output-generated-pass').text();
         clipboard.setData( "text/plain", text_to_copy );
         var successCopy = "Пароль успешно скопирован в буфер обмена";
-        $('#output-message').removeClass();
-        $('#output-message').addClass('success');
-        $('#output-message').text(successCopy);
+        var outputMessage = $('#output-message');
+        outputMessage.removeClass();
+        outputMessage.addClass('success');
+        outputMessage.text(successCopy);
     });
 
     // highlight symbol-set
@@ -58,17 +59,22 @@ function generate_new_pass() {
         ];
 
     // make array of symbol sets
+    var charset_power = 0;
     var array_of_sets = [];
     $('.symbol-set').each(function() {
        if ($(this).hasClass('active')) {
            if ($(this).hasClass('numbers')) {
                array_of_sets.push(numbers_set);
+               charset_power += numbers_set.length;
            } else if ($(this).hasClass('upper-char')) {
                array_of_sets.push(upper_letters_set);
+               charset_power += upper_letters_set.length;
            } else if ($(this).hasClass('lower-char')) {
                array_of_sets.push(lower_letters_set);
+               charset_power += lower_letters_set.length;
            } else if ($(this).hasClass('special-symbols')) {
                array_of_sets.push(special_set);
+               charset_power += special_set.length;
            }
        }
     });
@@ -79,7 +85,22 @@ function generate_new_pass() {
         var rand_symbol = get_random_item_from_array(array_of_symbols);
         new_pass += rand_symbol;
     }
-    return new_pass;
+
+    // set password strength
+    var bits = pass_length * Math.round((Math.log(charset_power) / Math.log(2)) + 0.5);
+    //console.log("charset_power = " + charset_power);
+    //console.log("bits = " + bits);
+    if (bits < 48) {
+        set_pass_color_message_pic('weak', 'ненадежный', 'img/smile-sad.svg')
+    } else if (bits < 64) {
+        set_pass_color_message_pic('medium', 'средний', 'img/smile-calm.svg')
+    } else if (bits < 128) {
+        set_pass_color_message_pic('strong', 'надежный', 'img/smile-happy.svg')
+    } else {
+        set_pass_color_message_pic('very-strong', 'сверхнадежный', 'img/smile-happy.svg')
+    }
+
+        return new_pass;
 }
 
 function get_random_item_from_array(array) {
@@ -87,6 +108,14 @@ function get_random_item_from_array(array) {
     var rand_item_index = Math.round(Math.random() * (len - 1));
     var rand_item = array[rand_item_index];
     return rand_item;
+}
+
+function set_pass_color_message_pic(strength, message, pic) {
+    var outputMessage = $('#output-message');
+    outputMessage.removeClass();
+    outputMessage.addClass(strength);
+    outputMessage.text(message);
+    $('#image-pass-strength').attr("src", pic)
 }
 
 

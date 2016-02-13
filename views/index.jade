@@ -3,10 +3,10 @@ extends layout
 block content
     div#main
         div(title="Качество пароля").smile
-            img(src="img/smile-03.svg")
+            img(src="img/smile-sad.svg")#image-pass-strength
         div(title="Пароль").output
             h1#output-generated-pass пароль
-            p#output-message.weak слабый
+            p#output-message.weak ненадежный
 
         div#control
             button(title="Копировать")#button-copy-pass.btn-copy
