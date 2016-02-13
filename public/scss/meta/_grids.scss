@@ -48,7 +48,8 @@ body {
 }
 
 #slider {
-  @include span(12);
+  @include span(10);
+  @include push(1);
 }
 #input-number {
   @include span(2);

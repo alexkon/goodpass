@@ -127,9 +127,8 @@ var slider = document.getElementById('slider');
 
 noUiSlider.create(slider, {
     animate: true,
-	start: 4,
+	start: 6,
     step: 1,
-    //tooltips:  true ,
 	range: {
 		'min': 4,
 		'max': 32
