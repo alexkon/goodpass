@@ -1,29 +1,31 @@
 extends layout
 
 block content
-    div#main
-        div.beta-container
-            div.beta beta
-        div(title="Качество пароля").smile
-            img(src="img/smile-happy.svg" alt="smile")#image-pass-strength
-        div(title="Пароль").output
-            h1#output-generated-pass Генератор
-            p#output-message.weak паролей
+    div#wrapper
+        div#main
+            div.beta-container
+                div.beta beta
+            div.top-margin
+            div(title="Качество пароля").smile
+                img(src="img/smile-happy.svg" alt="smile")#image-pass-strength
+            div(title="Пароль").output
+                h1#output-generated-pass Генератор
+                p#output-message.weak паролей
 
-        div#control
-            button(title="Копировать")#button-copy-pass.btn-copy
-                img(src="img/copy-01.svg" alt="copy")
-            button(title="Сгенерировать")#button-generate-pass.btn-gen сгенерировать
+            div#control
+                button(title="Копировать")#button-copy-pass.btn-copy
+                    img(src="img/copy-01.svg" alt="copy")
+                button(title="Сгенерировать")#button-generate-pass.btn-gen сгенерировать
 
-        div(title="Количество символов")#slider
+            div(title="Количество символов")#slider
 
-        input(type="text")#input-number
+            input(type="text")#input-number
 
-        div#settings
-            button(title="Цифры").numbers.active.symbol-set 0-9
-            button(title="Прописные").upper-char.symbol-set A-Z
-            button(title="Буквы").lower-char.symbol-set a-z
-            button(title="Буквы и прописные").special-symbols.symbol-set @#$%
+            div#settings
+                button(title="Цифры").numbers.active.symbol-set 0-9
+                button(title="Прописные").upper-char.symbol-set A-Z
+                button(title="Буквы").lower-char.symbol-set a-z
+                button(title="Буквы и прописные").special-symbols.symbol-set @#$%
 
     footer
-      a(href="mailto:admin@goodpass.ru") admin@goodpass.ru
+        a(href="mailto:admin@goodpass.ru") admin@goodpass.ru

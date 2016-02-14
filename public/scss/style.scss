@@ -10,8 +10,9 @@ $medium-color: #F1E881;
 $strong-color: #9BD092;
 $very-strong-color: #9BD092;
 
-body {
+html, body {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 h1 {
@@ -27,10 +28,6 @@ button {
   &:focus {
     outline: none;
   }
-}
-
-#main {
-  height: 100vh;
 }
 
 .beta-container {
@@ -55,8 +52,8 @@ button {
   }
 }
 
-.smile {
-  margin-top: 150px;
+.top-margin {
+  height: 15vh;
 }
 
 .output {
@@ -207,16 +204,29 @@ button {
   }
 }
 
-
 footer {
   color: grey;
-  bottom: 0;
-  position: absolute;
-  padding: 10px;
+  clear: both;
+  position: relative;
   font-size: 0.7em;
   text-align: center;
   & a {
     color: grey;
+    line-height: 40px;
     text-decoration: none;
   }
+}
+
+#wrapper {
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+
+#wrapper:after {
+  content: "";
+  display: block;
+}
+
+footer, #wrapper:after {
+  height: 40px;
 }

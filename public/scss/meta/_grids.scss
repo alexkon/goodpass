@@ -1,19 +1,20 @@
 @import "susy";
 
+// Settings
 $susy: (
         flow: ltr,
         math: fluid,
         output: float,
         gutter-position: inside,
-        container: 360px,
+        container: 1140px,
         container-position: center,
         columns: 12,
         gutters: 1/4,
         column-width: false,
-        global-box-sizing: content-box,
+        global-box-sizing: border-box,
         last-flow: to,
         debug: (
-                image: hide,
+                image: show,
                 color: rgba(#3f3839, .25),
                 output: overlay,
                 toggle: left bottom,
@@ -26,11 +27,13 @@ $susy: (
         )
 );
 
-body {
+#wrapper {
   @include container();
 }
 
-.content {
+#main {
+  @include span(4);
+  @include push(4);
 }
 
 .smile {
@@ -70,5 +73,6 @@ body {
 }
 
 footer {
-  @include span(12);
+  @include span(4);
+  @include push(4);
 }
