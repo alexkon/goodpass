@@ -30,8 +30,7 @@ body {
   @include container();
 }
 
-#main {
-  @include span(12);
+.content {
 }
 
 .smile {
@@ -51,6 +50,7 @@ body {
   @include span(10);
   @include push(1);
 }
+
 #input-number {
   @include span(2);
   @include push(5);

@@ -1,4 +1,3 @@
-@import "compass/css3";
 @import "compass/reset";
 @import "../../bower_components/nouislider/src/nouislider.css";
 @import "meta/grids";
@@ -31,7 +30,7 @@ button {
 }
 
 #main {
-  height: 100%;
+  height: 100vh;
 }
 
 .beta-container {
@@ -40,12 +39,12 @@ button {
   right: 0;
   height: 150px;
   width: 150px;
-  overflow:hidden;
+  overflow: hidden;
   .beta {
     background: $second-color;
     color: white;
     position: relative;
-    top:35px;
+    top: 35px;
     right: 55px;
     line-height: 30px;
     width: 300px;
@@ -208,10 +207,16 @@ button {
   }
 }
 
+
 footer {
-  bottom: 0;
   color: grey;
+  bottom: 0;
   position: absolute;
   padding: 10px;
   font-size: 0.7em;
+  text-align: center;
+  & a {
+    color: grey;
+    text-decoration: none;
+  }
 }
