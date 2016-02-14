@@ -6,7 +6,7 @@ $susy: (
         math: fluid,
         output: float,
         gutter-position: inside,
-        container: 1140px,
+        container: 360px,
         container-position: center,
         columns: 12,
         gutters: 1/4,
@@ -32,8 +32,7 @@ $susy: (
 }
 
 #main {
-  @include span(4);
-  @include push(4);
+  @include span(12);
 }
 
 .smile {
