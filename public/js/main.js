@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('#button-generate-pass').click(function() {
+    $('#button-generate-pass').click(function () {
         console.log('button-generate-pass clicked:');
         var newPass = generate_new_pass();
         $('#output-generated-pass').text(newPass);
@@ -8,10 +8,10 @@ $(document).ready(function () {
 
     // copy to clipboard button implementation
     var client = new ZeroClipboard($("#button-copy-pass"));
-    client.on( "copy", function (event) {
+    client.on("copy", function (event) {
         var clipboard = event.clipboardData;
         var textToCopy = $('#output-generated-pass').text();
-        clipboard.setData( "text/plain", textToCopy );
+        clipboard.setData("text/plain", textToCopy);
         var successCopy = "Пароль скопирован";
         var outputMessage = $('#output-message');
         outputMessage.removeClass();
@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     // highlight symbol-set
-    $('.symbol-set').click(function() {
+    $('.symbol-set').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
         } else {
@@ -41,7 +41,7 @@ function generate_new_pass() {
         return "";
     }
 
-    var numbersSet = ["0","1","2","3","4","5","6","7","8","9"];
+    var numbersSet = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
     var lowerLetterSet =
         [
@@ -55,28 +55,28 @@ function generate_new_pass() {
         ];
     var specialSet =
         [
-          "!", "@", "#", "$", "%", "^", "&", "*", "_", '+', '='
+            "!", "@", "#", "$", "%", "^", "&", "*", "_", '+', '='
         ];
 
     // make array of symbol sets
     var charsetPower = 0;
     var arrayOfSets = [];
-    $('.symbol-set').each(function() {
-       if ($(this).hasClass('active')) {
-           if ($(this).hasClass('numbers')) {
-               arrayOfSets.push(numbersSet);
-               charsetPower += numbersSet.length;
-           } else if ($(this).hasClass('upper-char')) {
-               arrayOfSets.push(upperLetterSet);
-               charsetPower += upperLetterSet.length;
-           } else if ($(this).hasClass('lower-char')) {
-               arrayOfSets.push(lowerLetterSet);
-               charsetPower += lowerLetterSet.length;
-           } else if ($(this).hasClass('special-symbols')) {
-               arrayOfSets.push(specialSet);
-               charsetPower += specialSet.length;
-           }
-       }
+    $('.symbol-set').each(function () {
+        if ($(this).hasClass('active')) {
+            if ($(this).hasClass('numbers')) {
+                arrayOfSets.push(numbersSet);
+                charsetPower += numbersSet.length;
+            } else if ($(this).hasClass('upper-char')) {
+                arrayOfSets.push(upperLetterSet);
+                charsetPower += upperLetterSet.length;
+            } else if ($(this).hasClass('lower-char')) {
+                arrayOfSets.push(lowerLetterSet);
+                charsetPower += lowerLetterSet.length;
+            } else if ($(this).hasClass('special-symbols')) {
+                arrayOfSets.push(specialSet);
+                charsetPower += specialSet.length;
+            }
+        }
     });
 
     // generate pass from symbol sets
@@ -100,7 +100,7 @@ function generate_new_pass() {
         set_pass_color_message_pic('very-strong', 'сверхнадежный', 'img/smile-happy.svg')
     }
 
-        return newPass;
+    return newPass;
 }
 
 function get_random_item_from_array(array) {
@@ -119,7 +119,6 @@ function set_pass_color_message_pic(strength, message, pic) {
 }
 
 
-
 // ------------------------------------------------------------------------------------------
 // slider
 
@@ -127,31 +126,63 @@ var slider = document.getElementById('slider');
 
 noUiSlider.create(slider, {
     animate: true,
-	start: 6,
+    start: 6,
     step: 1,
-	range: {
-		'min': 4,
-		'max': 32
-	},
+    range: {
+        'min': 4,
+        'max': 32
+    },
     format: {
-	  to: function ( value ) {
-		return value + '';
-	  },
-	  from: function ( value ) {
-		return value;
-	  }
-	}
+        to: function (value) {
+            return value + '';
+        },
+        from: function (value) {
+            return value;
+        }
+    }
 });
 
 var inputNumber = document.getElementById('input-number');
 
-slider.noUiSlider.on('update', function( values, handle ) {
+slider.noUiSlider.on('update', function (values, handle) {
 
     inputNumber.value = values[handle];
 
 });
 
-inputNumber.addEventListener('change', function(){
-	slider.noUiSlider.set(this.value);
+inputNumber.addEventListener('change', function () {
+    slider.noUiSlider.set(this.value);
 });
+
+// ------------------------------------------------------------------------------------------
+<!-- Yandex.Metrika counter -->
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function () {
+        try {
+            w.yaCounter35353335 = new Ya.Metrika({
+                id: 35353335,
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true
+            });
+        } catch (e) {
+        }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () {
+            n.parentNode.insertBefore(s, n);
+        };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else {
+        f();
+    }
+})(document, window, "yandex_metrika_callbacks");
+
 // ------------------------------------------------------------------------------------------
