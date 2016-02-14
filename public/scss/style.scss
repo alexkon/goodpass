@@ -99,8 +99,8 @@ button {
     font-size: 1.5em;
     float: left;
     position: relative;
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     z-index: 1;
     &:active {
       background: darken($base-color, 25);
@@ -116,10 +116,9 @@ button {
     color: #fff;
     cursor: pointer;
     font-size: 1.2em;
-    margin: 25px 0 0 -20px;
+    margin: 20px 0 0 -20px;
     padding: 0 10px 0 25px;
     height: 50px;
-    width: 240px;
     &:active {
       background: darken($second-color, 15);
     }
