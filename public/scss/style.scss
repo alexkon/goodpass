@@ -34,18 +34,26 @@ button {
   height: 100%;
 }
 
-.beta {
-  background: $second-color;
+.beta-container {
   position: absolute;
-  top:25px;
-  right: -100px;
-  color: white;
-  line-height: 30px;
-  width: 300px;
-  text-align: center;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+  top: 0;
+  right: 0;
+  height: 150px;
+  width: 150px;
+  overflow:hidden;
+  .beta {
+    background: $second-color;
+    color: white;
+    position: relative;
+    top:35px;
+    right: 55px;
+    line-height: 30px;
+    width: 300px;
+    text-align: center;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 }
 
 .smile {
