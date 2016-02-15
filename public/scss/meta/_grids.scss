@@ -6,7 +6,7 @@ $susy: (
         math: fluid,
         output: float,
         gutter-position: inside,
-        container: 360px,
+        container: 1140px,
         container-position: center,
         columns: 12,
         gutters: 1/4,
@@ -32,7 +32,18 @@ $susy: (
 }
 
 #main {
-  @include span(12);
+  @media (min-width: 320px) {
+    @include span(12);
+    @include push(0);
+  }
+  @media (min-width: 500px) {
+    @include span(6);
+    @include push(3);
+  }
+  @media (min-width: 960px) {
+    @include span(4);
+    @include push(4);
+  }
 }
 
 .logo {
@@ -49,8 +60,7 @@ $susy: (
 }
 
 #control {
-  @include span(10);
-  @include push(1);
+  @include span(12);
 }
 
 #slider {
