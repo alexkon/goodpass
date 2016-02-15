@@ -54,7 +54,7 @@ button {
 
 .logo {
   background: url("../img/logo.svg");
-  margin-top: 20px;
+  margin-top: 40px;
   height: 150px;
 }
 
@@ -64,15 +64,13 @@ button {
 
 .output {
   text-align: center;
-}
-
-#output-message {
-  margin: 5px 0 0 0;
-  text-align: center;
-}
-
-#output-generated-pass {
-  margin: 5px 0 5px 0;
+  #output-message {
+    font-size: 1.2em;
+    margin: 5px 0 0 0;
+  }
+  #output-generated-pass {
+    margin: 10px 0 15px 0;
+  }
 }
 
 .success {
