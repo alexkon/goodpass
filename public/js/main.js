@@ -1,9 +1,7 @@
 $(document).ready(function () {
 
     $('#button-generate-pass').click(function () {
-        console.log('button-generate-pass clicked:');
-        var newPass = generate_new_pass();
-        $('#output-generated-pass').text(newPass);
+        generateAndShowPass()
     });
 
     // copy to clipboard button implementation
@@ -28,6 +26,11 @@ $(document).ready(function () {
         }
     });
 });
+
+function generateAndShowPass() {
+    var newPass = generate_new_pass();
+    $('#output-generated-pass').text(newPass);
+}
 
 function generate_new_pass() {
 
@@ -147,6 +150,7 @@ var inputNumber = document.getElementById('input-number');
 slider.noUiSlider.on('update', function (values, handle) {
 
     inputNumber.value = values[handle];
+    generateAndShowPass()
 
 });
 
