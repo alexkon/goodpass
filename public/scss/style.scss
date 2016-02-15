@@ -52,8 +52,14 @@ button {
   }
 }
 
-.top-margin {
-  height: 15vh;
+.logo {
+  background: url("../img/logo.svg");
+  margin-top: 20px;
+  height: 150px;
+}
+
+.smile {
+  margin-top: -40px;
 }
 
 .output {

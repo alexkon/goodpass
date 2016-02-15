@@ -35,6 +35,10 @@ $susy: (
   @include span(12);
 }
 
+.logo {
+  @include span(12);
+}
+
 .smile {
   @include span(4);
   @include push(4);
