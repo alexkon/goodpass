@@ -129,7 +129,7 @@ var slider = document.getElementById('slider');
 
 noUiSlider.create(slider, {
     animate: true,
-    start: 6,
+    start: 12,
     step: 1,
     range: {
         'min': 4,
