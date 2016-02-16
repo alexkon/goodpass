@@ -146,13 +146,17 @@ noUiSlider.create(slider, {
     }
 });
 
+var isFirstTime = true;
 var inputNumber = document.getElementById('input-number');
 
 slider.noUiSlider.on('update', function (values, handle) {
 
     inputNumber.value = values[handle];
-    generateAndShowPass()
-
+    if (isFirstTime) {
+        isFirstTime = false;
+    } else {
+        generateAndShowPass()
+    }
 });
 
 inputNumber.addEventListener('change', function () {
