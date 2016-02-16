@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
     res.render('404', {
         title: 'Good Password | Страница не найдена'
     });
-    next(err);
+    //next(err);
 });
 
 // cache settings
