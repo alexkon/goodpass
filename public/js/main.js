@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $('#button-generate-pass').click(function () {
-        generateAndShowPass()
+        generateAndShowPass();
     });
 
     // copy to clipboard button implementation
@@ -24,6 +24,7 @@ $(document).ready(function () {
         } else {
             $(this).addClass('active');
         }
+        generateAndShowPass();
     });
 });
 
