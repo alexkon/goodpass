@@ -101,7 +101,7 @@ function generate_new_pass() {
     } else if (bits < 128) {
         set_pass_color_message_pic('strong', 'надежный', 'img/smile-happy.svg')
     } else {
-        set_pass_color_message_pic('very-strong', 'сверхнадежный', 'img/smile-strong.svg')
+        set_pass_color_message_pic('very-strong', 'четкий', 'img/smile-strong.svg')
     }
 
     return newPass;
