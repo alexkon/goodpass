@@ -95,13 +95,13 @@ function generate_new_pass() {
     //console.log("charset_power = " + charset_power);
     //console.log("bits = " + bits);
     if (bits < 48) {
-        set_pass_color_message_pic('weak', 'ненадежный', 'img/smile-sad.svg')
+        set_pass_color_message_pic('weak', 'ненадежный', 'smile-sad.svg')
     } else if (bits < 64) {
-        set_pass_color_message_pic('medium', 'средний', 'img/smile-calm.svg')
+        set_pass_color_message_pic('medium', 'средний', 'smile-calm.svg')
     } else if (bits < 128) {
-        set_pass_color_message_pic('strong', 'надежный', 'img/smile-happy.svg')
+        set_pass_color_message_pic('strong', 'надежный', 'smile-happy.svg')
     } else {
-        set_pass_color_message_pic('very-strong', 'четкий', 'img/smile-strong.svg')
+        set_pass_color_message_pic('very-strong', 'четкий', 'smile-strong.svg')
     }
 
     return newPass;
@@ -115,7 +115,8 @@ function get_random_item_from_array(array) {
 }
 
 function set_pass_color_message_pic(strength, message, pic) {
-    $('#image-pass-strength').attr("src", pic);
+    img_path = "https://s3-us-west-2.amazonaws.com/goodpass/";
+    $('#image-pass-strength').attr("src", img_path + pic);
     var outputMessage = $('#output-message');
     outputMessage.removeClass();
     outputMessage.addClass(strength);
