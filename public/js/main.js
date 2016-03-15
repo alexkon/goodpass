@@ -47,8 +47,12 @@ $(document).ready(function () {
     });
 });
 
+// ------------------------------------------------------------------------------------------
+// password generation
+
 function generateAndShowPass() {
     var newPass = generate_new_pass();
+    caluculatePassStrength(newPass);
     $('#output-generated-pass').text(newPass);
 }
 
@@ -65,22 +69,17 @@ function generate_new_pass() {
     }
 
     // make array of symbol sets
-    var charsetPower = 0;
     var arrayOfSets = [];
     $('.symbol-set').each(function () {
         if ($(this).hasClass('active')) {
             if ($(this).hasClass('numbers')) {
                 arrayOfSets.push(numbersSet);
-                charsetPower += numbersSet.length;
             } else if ($(this).hasClass('upper-char')) {
                 arrayOfSets.push(upperLetterSet);
-                charsetPower += upperLetterSet.length;
             } else if ($(this).hasClass('lower-char')) {
                 arrayOfSets.push(lowerLetterSet);
-                charsetPower += lowerLetterSet.length;
             } else if ($(this).hasClass('special-symbols')) {
                 arrayOfSets.push(specialSet);
-                charsetPower += specialSet.length;
             }
         }
     });
@@ -90,20 +89,6 @@ function generate_new_pass() {
         var arrayOfSymbols = get_random_item_from_array(arrayOfSets);
         var randSymbol = get_random_item_from_array(arrayOfSymbols);
         newPass += randSymbol;
-    }
-
-    // set password strength
-    var bits = passLength * Math.round((Math.log(charsetPower) / Math.log(2)) + 0.5);
-    //console.log("charset_power = " + charset_power);
-    //console.log("bits = " + bits);
-    if (bits < 48) {
-        set_pass_color_message_pic('weak', 'ненадежный', 'smile-sad.svg')
-    } else if (bits < 64) {
-        set_pass_color_message_pic('medium', 'средний', 'smile-calm.svg')
-    } else if (bits < 128) {
-        set_pass_color_message_pic('strong', 'надежный', 'smile-happy.svg')
-    } else {
-        set_pass_color_message_pic('very-strong', 'четкий', 'smile-strong.svg')
     }
 
     return newPass;
@@ -116,6 +101,46 @@ function get_random_item_from_array(array) {
     return randItem;
 }
 
+// ------------------------------------------------------------------------------------------
+// calculate password strength
+
+function caluculatePassStrength (password) {
+
+    var passLength = password.length;
+    var charsetPower = getPassCharsetPower(password);
+    var bits = passLength * Math.round((Math.log(charsetPower) / Math.log(2)) + 0.5);
+
+    //console.log("charset_power = " + charsetPower);
+    //console.log("bits = " + bits);
+
+    if (bits < 48) {
+        set_pass_color_message_pic('weak', 'ненадежный', 'smile-sad.svg')
+    } else if (bits < 64) {
+        set_pass_color_message_pic('medium', 'средний', 'smile-calm.svg')
+    } else if (bits < 128) {
+        set_pass_color_message_pic('strong', 'надежный', 'smile-happy.svg')
+    } else {
+        set_pass_color_message_pic('very-strong', 'четкий', 'smile-strong.svg')
+    }
+}
+
+function getPassCharsetPower (password) {
+    var charsetPower = 0;
+    if (/\d/.test(password)) {
+        charsetPower += numbersSet.length;
+    }
+    if (/[A-Z]/.test(password)) {
+        charsetPower += upperLetterSet.length;
+    }
+    if (/[a-z]/.test(password)) {
+        charsetPower += lowerLetterSet.length;
+    }
+    if (/\W/.test(password)) {
+        charsetPower += specialSet.length;
+    }
+    return charsetPower;
+}
+
 function set_pass_color_message_pic(strength, message, pic) {
     img_path = "https://s3-us-west-2.amazonaws.com/goodpass/";
     $('#image-pass-strength').attr("src", img_path + pic);
@@ -124,6 +149,7 @@ function set_pass_color_message_pic(strength, message, pic) {
     outputMessage.addClass(strength);
     outputMessage.text(message);
 }
+
 
 
 // ------------------------------------------------------------------------------------------
@@ -167,7 +193,7 @@ inputNumber.addEventListener('change', function () {
 });
 
 // ------------------------------------------------------------------------------------------
-<!-- Yandex.Metrika counter -->
+// <!-- Yandex.Metrika counter -->
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function () {
         try {
