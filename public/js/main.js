@@ -1,3 +1,9 @@
+// initialize images
+var IMAGE_WEAK = "https://s3-us-west-2.amazonaws.com/goodpass/smile-sad.svg";
+var IMAGE_MEDIUM = "https://s3-us-west-2.amazonaws.com/goodpass/smile-calm.svg";
+var IMAGE_STRONG = "https://s3-us-west-2.amazonaws.com/goodpass/smile-happy.svg";
+var IMAGE_VERY_STRONG = "https://s3-us-west-2.amazonaws.com/goodpass/smile-strong.svg";
+
 // initialize charset arrays
 var numbersSet = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
@@ -114,13 +120,13 @@ function caluculatePassStrength (password) {
     //console.log("bits = " + bits);
 
     if (bits < 48) {
-        set_pass_color_message_pic('weak', 'ненадежный', 'smile-sad.svg')
+        set_pass_color_message_pic('weak', 'ненадежный', IMAGE_WEAK)
     } else if (bits < 64) {
-        set_pass_color_message_pic('medium', 'средний', 'smile-calm.svg')
+        set_pass_color_message_pic('medium', 'средний', IMAGE_MEDIUM)
     } else if (bits < 128) {
-        set_pass_color_message_pic('strong', 'надежный', 'smile-happy.svg')
+        set_pass_color_message_pic('strong', 'надежный', IMAGE_STRONG)
     } else {
-        set_pass_color_message_pic('very-strong', 'четкий', 'smile-strong.svg')
+        set_pass_color_message_pic('very-strong', 'четкий', IMAGE_VERY_STRONG)
     }
 }
 
@@ -142,8 +148,7 @@ function getPassCharsetPower (password) {
 }
 
 function set_pass_color_message_pic(strength, message, pic) {
-    img_path = "https://s3-us-west-2.amazonaws.com/goodpass/";
-    $('#image-pass-strength').attr("src", img_path + pic);
+    $('#image-pass-strength').attr("src", pic);
     var outputMessage = $('#output-message');
     outputMessage.removeClass();
     outputMessage.addClass(strength);
