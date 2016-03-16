@@ -5,19 +5,19 @@ var IMAGE_STRONG = "https://s3-us-west-2.amazonaws.com/goodpass/smile-happy.svg"
 var IMAGE_VERY_STRONG = "https://s3-us-west-2.amazonaws.com/goodpass/smile-strong.svg";
 
 // initialize charset arrays
-var numbersSet = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var NUMBER_SET = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-var lowerLetterSet =
+var LOWER_LETTER_SET =
     [
         "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
         "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
     ];
-var upperLetterSet =
+var UPPER_LETTER_SET =
     [
         "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
         "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
     ];
-var specialSet =
+var SPECIAL_SET =
     [
         "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "?", "/", "~"
     ];
@@ -79,13 +79,13 @@ function generate_new_pass() {
     $('.symbol-set').each(function () {
         if ($(this).hasClass('active')) {
             if ($(this).hasClass('numbers')) {
-                arrayOfSets.push(numbersSet);
+                arrayOfSets.push(NUMBER_SET);
             } else if ($(this).hasClass('upper-char')) {
-                arrayOfSets.push(upperLetterSet);
+                arrayOfSets.push(UPPER_LETTER_SET);
             } else if ($(this).hasClass('lower-char')) {
-                arrayOfSets.push(lowerLetterSet);
+                arrayOfSets.push(LOWER_LETTER_SET);
             } else if ($(this).hasClass('special-symbols')) {
-                arrayOfSets.push(specialSet);
+                arrayOfSets.push(SPECIAL_SET);
             }
         }
     });
@@ -133,16 +133,16 @@ function caluculatePassStrength (password) {
 function getPassCharsetPower (password) {
     var charsetPower = 0;
     if (/\d/.test(password)) {
-        charsetPower += numbersSet.length;
+        charsetPower += NUMBER_SET.length;
     }
     if (/[A-Z]/.test(password)) {
-        charsetPower += upperLetterSet.length;
+        charsetPower += UPPER_LETTER_SET.length;
     }
     if (/[a-z]/.test(password)) {
-        charsetPower += lowerLetterSet.length;
+        charsetPower += LOWER_LETTER_SET.length;
     }
     if (/\W/.test(password)) {
-        charsetPower += specialSet.length;
+        charsetPower += SPECIAL_SET.length;
     }
     return charsetPower;
 }
