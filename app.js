@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
 app.use(function (req, res, next) {
     if (!res.getHeader('Cache-Control'))
         res.setHeader('Cache-Control',
-            'public, max-age=' + (maxAge / 1000));
+            'public, max-age=' + (maxAge / 604800));
 });
 
 // error handlers
