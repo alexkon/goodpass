@@ -1,8 +1,8 @@
 // initialize images
-var IMAGE_WEAK = "https://s3-us-west-2.amazonaws.com/goodpass/smile-sad.svg";
-var IMAGE_MEDIUM = "https://s3-us-west-2.amazonaws.com/goodpass/smile-calm.svg";
-var IMAGE_STRONG = "https://s3-us-west-2.amazonaws.com/goodpass/smile-happy.svg";
-var IMAGE_VERY_STRONG = "https://s3-us-west-2.amazonaws.com/goodpass/smile-strong.svg";
+var SVG_WEAK = $('#image-weak');
+var SVG_MEDIUM = $('#image-medium');
+var SVG_STRONG = $('#image-strong');
+var SVG_VERY_STRONG = $('#image-very-strong');
 
 // initialize charset arrays
 var NUMBER_SET = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -116,17 +116,14 @@ function caluculatePassStrength (password) {
     var charsetPower = getPassCharsetPower(password);
     var bits = passLength * Math.round((Math.log(charsetPower) / Math.log(2)) + 0.5);
 
-    //console.log("charset_power = " + charsetPower);
-    //console.log("bits = " + bits);
-
     if (bits < 48) {
-        set_pass_color_message_pic('weak', 'ненадежный', IMAGE_WEAK)
+        set_pass_color_message_pic_svg('weak', 'ненадежный', SVG_WEAK)
     } else if (bits < 64) {
-        set_pass_color_message_pic('medium', 'средний', IMAGE_MEDIUM)
+        set_pass_color_message_pic_svg('medium', 'средний', SVG_MEDIUM)
     } else if (bits < 128) {
-        set_pass_color_message_pic('strong', 'надежный', IMAGE_STRONG)
+        set_pass_color_message_pic_svg('strong', 'надежный', SVG_STRONG)
     } else {
-        set_pass_color_message_pic('very-strong', 'четкий', IMAGE_VERY_STRONG)
+        set_pass_color_message_pic_svg('very-strong', 'четкий', SVG_VERY_STRONG)
     }
 }
 
@@ -147,8 +144,8 @@ function getPassCharsetPower (password) {
     return charsetPower;
 }
 
-function set_pass_color_message_pic(strength, message, pic) {
-    $('#image-pass-strength').attr("src", pic);
+function set_pass_color_message_pic_svg(strength, message, svg) {
+    $('#image-pass-strength').html(svg.html());
     var outputMessage = $('#output-message');
     outputMessage.removeClass();
     outputMessage.addClass(strength);
