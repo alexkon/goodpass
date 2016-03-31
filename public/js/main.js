@@ -33,7 +33,7 @@ $(document).ready(function () {
     var client = new ZeroClipboard($("#button-copy-pass"));
     client.on("copy", function (event) {
         var clipboard = event.clipboardData;
-        var textToCopy = $('#output-generated-pass').text();
+        var textToCopy = $('#output-generated-pass').val();
         clipboard.setData("text/plain", textToCopy);
         var successCopy = "Пароль скопирован";
         var outputMessage = $('#output-message');
