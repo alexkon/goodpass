@@ -19,6 +19,14 @@ h1 {
   color: $base-color;
 }
 
+#output-generated-pass {
+  border: none;
+  color: $base-color;
+  text-align: center;
+  font-size: 1em;
+  width: 100%;
+}
+
 button {
   background: none;
   border: 0;

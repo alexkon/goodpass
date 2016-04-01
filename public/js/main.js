@@ -33,7 +33,7 @@ $(document).ready(function () {
     var client = new ZeroClipboard($("#button-copy-pass"));
     client.on("copy", function (event) {
         var clipboard = event.clipboardData;
-        var textToCopy = $('#output-generated-pass').text();
+        var textToCopy = $('#output-generated-pass').val();
         clipboard.setData("text/plain", textToCopy);
         var successCopy = "Пароль скопирован";
         var outputMessage = $('#output-message');
@@ -59,7 +59,7 @@ $(document).ready(function () {
 function generateAndShowPass() {
     var newPass = generate_new_pass();
     caluculatePassStrength(newPass);
-    $('#output-generated-pass').text(newPass);
+    $('#output-generated-pass').val(newPass);
 }
 
 function generate_new_pass() {
@@ -152,7 +152,13 @@ function set_pass_color_message_pic_svg(strength, message, svg) {
     outputMessage.text(message);
 }
 
-
+// ------------------------------------------------------------------------------------------
+// catch user input
+$( "#output-generated-pass" ).keypress(function(event) {
+    var newSymbol = String.fromCharCode(event.keyCode);
+    var currentPass = $('#output-generated-pass').val() + newSymbol;
+    caluculatePassStrength(currentPass);
+});
 
 // ------------------------------------------------------------------------------------------
 // slider
