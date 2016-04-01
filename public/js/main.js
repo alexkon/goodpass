@@ -22,6 +22,8 @@ var SPECIAL_SET =
         "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "?", "/", "~"
     ];
 
+// catch user input
+var isUserInTheMiddleOfTyping = false;
 
 $(document).ready(function () {
 
@@ -158,6 +160,9 @@ $( "#output-generated-pass" ).keypress(function(event) {
     var newSymbol = String.fromCharCode(event.keyCode);
     var currentPass = $('#output-generated-pass').val() + newSymbol;
     caluculatePassStrength(currentPass);
+    isUserInTheMiddleOfTyping = true;
+    slider.noUiSlider.set(currentPass.length);
+
 });
 
 // ------------------------------------------------------------------------------------------
@@ -170,7 +175,7 @@ noUiSlider.create(slider, {
     start: 12,
     step: 1,
     range: {
-        'min': 4,
+        'min': 1,
         'max': 32
     },
     format: {
@@ -192,7 +197,11 @@ slider.noUiSlider.on('update', function (values, handle) {
     if (isFirstTime) {
         isFirstTime = false;
     } else {
-        generateAndShowPass()
+        if (isUserInTheMiddleOfTyping) {
+            isUserInTheMiddleOfTyping = false;
+        } else {
+            generateAndShowPass()
+        }
     }
 });
 
