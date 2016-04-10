@@ -156,9 +156,8 @@ function set_pass_color_message_pic_svg(strength, message, svg) {
 
 // ------------------------------------------------------------------------------------------
 // catch user input
-$( "#output-generated-pass" ).keypress(function(event) {
-    var newSymbol = String.fromCharCode(event.keyCode);
-    var currentPass = $('#output-generated-pass').val() + newSymbol;
+$( "#output-generated-pass" ).keyup(function() {
+    var currentPass = $('#output-generated-pass').val();
     caluculatePassStrength(currentPass);
     isUserInTheMiddleOfTyping = true;
     slider.noUiSlider.set(currentPass.length);
