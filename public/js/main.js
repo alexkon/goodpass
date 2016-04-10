@@ -115,6 +115,8 @@ function get_random_item_from_array(array) {
 function caluculatePassStrength (password) {
 
     var passLength = password.length;
+    if (passLength == 0) {set_pass_color_message_pic_svg('weak', 'пусто', SVG_WEAK); return;}
+    
     var charsetPower = getPassCharsetPower(password);
     var bits = passLength * Math.round((Math.log(charsetPower) / Math.log(2)) + 0.5);
 
