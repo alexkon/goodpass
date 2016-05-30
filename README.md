@@ -23,6 +23,5 @@ npm install
 node bin/www
 ```
 
-For extended options see:
-[run.sh](run.sh) script
+For debug options see the file [run.sh](run.sh)
 
