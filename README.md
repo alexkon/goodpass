@@ -1,8 +1,8 @@
 # Good Pass password generator
 
-It's a web application which could help you generate a new password.
-It's very simple and incredibly fast.
-Technology stack: Node.js, Express, Jade and jQuery.
+It's a web application which could help you generate a new password.  
+It's very simple and incredibly fast.  
+Technology stack: __Node.js__, __Express__, __Jade__ and __jQuery__.
 
 ## Requirements
 
