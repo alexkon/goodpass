@@ -24,5 +24,5 @@ node bin/www
 ```
 
 For extended options see:
-[run.sh script](run.sh)
+[run.sh](run.sh) script
 
