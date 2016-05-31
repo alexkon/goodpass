@@ -13,6 +13,9 @@ $very-strong-color: #9BD092;
 html, body {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 100%;
+  a {
+    text-decoration: none;
+  }
 }
 
 h1 {
@@ -30,7 +33,7 @@ h1 {
 button {
   background: none;
   border: 0;
-  display:inline-block;
+  display: inline-block;
   font: inherit;
   line-height: normal;
   padding: 0;
@@ -39,25 +42,15 @@ button {
   }
 }
 
-.beta-container {
+.git-logo-container {
   position: absolute;
-  top: 0;
-  right: 0;
-  height: 150px;
-  width: 150px;
-  overflow: hidden;
-  .beta {
-    background: $second-color;
-    color: white;
-    position: relative;
-    top: 35px;
-    right: 55px;
-    line-height: 20px;
-    width: 300px;
-    text-align: center;
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+  top: 10px;
+  right: 25px;
+  height: 60px;
+  width: 60px;
+  span {
+    margin-top: 60px;
+    color: $second-color;
   }
 }
 
@@ -66,9 +59,11 @@ button {
   margin-top: 40px;
   height: 150px;
 }
+
 .size {
   height: 100px;
 }
+
 .smile {
   margin-top: -40px;
 }
