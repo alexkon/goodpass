@@ -194,7 +194,7 @@ var inputNumber = document.getElementById('input-number');
 
 slider.noUiSlider.on('update', function (values, handle) {
 
-    inputNumber.value = values[handle];
+    inputNumber.value = Math.round(values[handle]);
     if (isFirstTime) {
         isFirstTime = false;
     } else {
