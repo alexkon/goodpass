@@ -37,7 +37,7 @@ $(document).ready(function () {
         var clipboard = event.clipboardData;
         var textToCopy = $('#output-generated-pass').val();
         clipboard.setData("text/plain", textToCopy);
-        var successCopy = "Пароль скопирован";
+        var successCopy = "Password copied";
         var outputMessage = $('#output-message');
         outputMessage.removeClass();
         outputMessage.addClass('success');
@@ -121,13 +121,13 @@ function caluculatePassStrength (password) {
     var bits = passLength * Math.round((Math.log(charsetPower) / Math.log(2)) + 0.5);
 
     if (bits < 48) {
-        set_pass_color_message_pic_svg('weak', 'ненадежный', SVG_WEAK)
+        set_pass_color_message_pic_svg('weak', 'weak', SVG_WEAK)
     } else if (bits < 64) {
-        set_pass_color_message_pic_svg('medium', 'средний', SVG_MEDIUM)
+        set_pass_color_message_pic_svg('medium', 'medium', SVG_MEDIUM)
     } else if (bits < 128) {
-        set_pass_color_message_pic_svg('strong', 'надежный', SVG_STRONG)
+        set_pass_color_message_pic_svg('strong', 'strong', SVG_STRONG)
     } else {
-        set_pass_color_message_pic_svg('very-strong', 'четкий', SVG_VERY_STRONG)
+        set_pass_color_message_pic_svg('very-strong', 'cool', SVG_VERY_STRONG)
     }
 }
 
