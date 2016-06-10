@@ -1,3 +1,5 @@
+![Home page](public/img/main-screen.png)
+
 # Good Pass password generator
 
 It's a web application which could help you generate a new password.  
