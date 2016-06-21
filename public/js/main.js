@@ -59,12 +59,12 @@ $(document).ready(function () {
 // password generation
 
 function generateAndShowPass() {
-    var newPass = generate_new_pass();
+    var newPass = generateNewPass();
     caluculatePassStrength(newPass);
     $('#output-generated-pass').val(newPass);
 }
 
-function generate_new_pass() {
+function generateNewPass() {
 
     var newPass = "";
 
@@ -94,15 +94,15 @@ function generate_new_pass() {
 
     // generate pass from symbol sets
     for (var i = 0; i < passLength; i++) {
-        var arrayOfSymbols = get_random_item_from_array(arrayOfSets);
-        var randSymbol = get_random_item_from_array(arrayOfSymbols);
+        var arrayOfSymbols = getRandomItemFromArray(arrayOfSets);
+        var randSymbol = getRandomItemFromArray(arrayOfSymbols);
         newPass += randSymbol;
     }
 
     return newPass;
 }
 
-function get_random_item_from_array(array) {
+function getRandomItemFromArray(array) {
     var len = array.length;
     var randItemIndex = Math.round(Math.random() * (len - 1));
     var randItem = array[randItemIndex];
@@ -115,19 +115,19 @@ function get_random_item_from_array(array) {
 function caluculatePassStrength (password) {
 
     var passLength = password.length;
-    if (passLength == 0) {set_pass_color_message_pic_svg('weak', 'пусто', SVG_WEAK); return;}
+    if (passLength == 0) {setPassColorMessagePicSvg('weak', 'пусто', SVG_WEAK); return;}
     
     var charsetPower = getPassCharsetPower(password);
     var bits = passLength * Math.round((Math.log(charsetPower) / Math.log(2)) + 0.5);
 
     if (bits < 48) {
-        set_pass_color_message_pic_svg('weak', 'weak', SVG_WEAK)
+        setPassColorMessagePicSvg('weak', 'weak', SVG_WEAK)
     } else if (bits < 64) {
-        set_pass_color_message_pic_svg('medium', 'medium', SVG_MEDIUM)
+        setPassColorMessagePicSvg('medium', 'medium', SVG_MEDIUM)
     } else if (bits < 128) {
-        set_pass_color_message_pic_svg('strong', 'strong', SVG_STRONG)
+        setPassColorMessagePicSvg('strong', 'strong', SVG_STRONG)
     } else {
-        set_pass_color_message_pic_svg('very-strong', 'cool', SVG_VERY_STRONG)
+        setPassColorMessagePicSvg('very-strong', 'cool', SVG_VERY_STRONG)
     }
 }
 
@@ -148,7 +148,7 @@ function getPassCharsetPower (password) {
     return charsetPower;
 }
 
-function set_pass_color_message_pic_svg(strength, message, svg) {
+function setPassColorMessagePicSvg(strength, message, svg) {
     $('#image-pass-strength').html(svg.html());
     var outputMessage = $('#output-message');
     outputMessage.removeClass();
