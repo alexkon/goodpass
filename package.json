@@ -17,6 +17,7 @@
     "node-compass": "^0.2.3",
     "nouislider": "^8.5.1",
     "serve-favicon": "^2.3.0",
+    "susy": "^2.2.12",
     "zeroclipboard": "^2.2.0"
   }
 }
