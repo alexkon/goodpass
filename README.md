@@ -17,12 +17,13 @@ Software stack: __Node.js__, __Express__, __Jade__ and __jQuery__.
 
 ```
 npm install
+npm run build
 ```
 
 ## Run program
 
 ```
-node bin/www
+npm start
 ```
 
 For debug options see the file [run.sh](run.sh)
