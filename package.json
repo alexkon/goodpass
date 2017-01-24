@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "gulp"
   },
   "dependencies": {
     "body-parser": "^1.14.2",
@@ -11,10 +12,12 @@
     "cookie-parser": "^1.4.1",
     "debug": "^2.2.0",
     "express": "^4.13.1",
+    "gulp": "^3.9.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-sass": "^3.1.0",
     "jade": "^1.11.0",
     "jquery": "^2.2.3",
     "morgan": "^1.6.1",
-    "node-compass": "^0.2.3",
     "nouislider": "^8.5.1",
     "serve-favicon": "^2.3.0",
     "susy": "^2.2.12",

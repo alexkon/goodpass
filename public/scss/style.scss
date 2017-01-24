@@ -1,6 +1,7 @@
-@import "compass/reset";
 @import "../../node_modules/nouislider/distribute/nouislider.min.css";
 @import "meta/grids";
+@import "meta/reset";
+@include global-reset;
 
 $base-color: #6dcff6;
 $second-color: #fc987e;
